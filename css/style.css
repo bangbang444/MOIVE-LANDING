@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Ribeye+Marrow&family=Zen+Tokyo+Zoo&display=swap');
+
+@import url('reset.css');
+
+/* HEADER */
+header {
+  width: 100%;
+  border-bottom: 1px solid #999;
+  display: flex;
+
+  /* 주축 정의 */
+  justify-content: space-between;
+  /* 교차 축 정렬 */
+  align-items: center;
+  /* 좌우 여백 */
+  padding: 5vh 5vw;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* css 태그는 최대한 구체적으로 하는 것이 좋다. */
+header h1 a {
+  font: bold 24px/50px 'Zen Tokyo Zoo';
+  color: #555;
+}
+
+header .btn_menu {
+  font-size: 24px;
+  color: #333;
+
+  /* 가리기 */
+  display: none;
+}
+
+header #gnb {
+  display: flex;
+}
+
+header #gnb li {
+  margin: 0 20px;
+}
+
+header #gnb a {
+  margin: 0 20px;
+
+  /* 16px로 통일하겠다 */
+  font: bold 16px/1 'Zen Tokyo Zoo';
+  color: #333;
+  letter-spacing: 1px;
+}
+
+header #sns {
+  display: flex;
+  gap: 6px;
+}
+
+header #sns li a {
+  font-size: 16px;
+  color: #333;
+}
+
+/* BACKGROUND VIDEO */
+figure {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+figure video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+figure .text {
+  position: absolute;
+  left: 6vw;
+  top: 50%;
+  transform: translate(0, -50);
+}
+
+figure .text p {
+  font: normal 8vw/1 'Zen Tokyo Zoo';
+  color: #222;
+}
+
+figure .text ul {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+figure .text ul li a i {
+  font-size: 20px;
+  color: #222;
+  margin-right: 10px;
+}
+
+figure .text ul li a strong {
+  font: normal 14px/1 '';
+  color: #222;
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  text-align: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font: 12px/1 'arial';
+  color: #222;
+  letter-spacing: 2px;
+  padding: 5vh 5vw;
+  z-index: 2;
+}
+
+#snb {
+  display: none;
+}
+
+/* MOBILE */
+@media screen and (max-width: 968px) {
+  header #gnb {
+    display: none;
+  }
+
+  header #sns {
+    display: none;
+  }
+
+  header .btn_menu {
+    display: block;
+  }
+
+  figure .text p {
+    font-size: 15vw;
+  }
+
+  #snb {
+    display: block;
+  }
+
+  header #snb .sub_menu {
+    position: absolute;
+    padding: 10px 25px;
+    background-color: rgb(173, 179, 164);
+    border: 1px solid #999;
+    border-radius: 10px;
+    right: 5vw;
+    text-align: right;
+    visibility: visible;
+    opacity: 1;
+    transition-duration: 0.4s;
+  }
+
+  header #snb .sub_menu.hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  header #snb .sub_menu li {
+    padding: 10px 0px;
+    font: normal 16px/1 'Zen Tokyo Zoo';
+    color: #222;
+  }
+
+  header #snb .sub_menu li a i {
+    margin-left: 8px;
+  }
+
+  header #snb .sub_menu li a {
+    color: #222;
+  }
+}
